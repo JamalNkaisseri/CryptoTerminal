@@ -1,0 +1,260 @@
+/* ====== Global Background ====== */
+.root {
+    -fx-background-color: #1E1E2E;
+}
+
+/* ====== Text Area Styling ====== */
+.text-area {
+    -fx-background-color: transparent;
+    -fx-text-fill: #E0E0E0;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+}
+
+.text-area:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.text-area .text {
+    -fx-fill: #E0E0E0;
+}
+
+.text-area .selection {
+    -fx-fill: #BB86FC;
+}
+
+.text-area .caret {
+    -fx-stroke: #FF79C6;
+    -fx-stroke-width: 2px;
+}
+
+/* ====== Label Styling ====== */
+.label {
+    -fx-text-fill: #E0E0E0;
+    -fx-background-color: transparent;
+}
+
+.label.line-number {
+    -fx-text-fill: #E0E0E0;
+    -fx-background-color: #1E1E2E;
+    -fx-padding: 0 10 0 10;
+}
+
+/* ====== Button Styling ====== */
+.button {
+    -fx-background-color: #252535;
+    -fx-text-fill: #E0E0E0;
+    -fx-border-color: transparent;
+    -fx-padding: 8px 12px;
+}
+
+.button:hover {
+    -fx-background-color: #2A2A3A;
+}
+
+.button:pressed {
+    -fx-background-color: #1E1E2E;
+}
+
+/* ====== TextField Styling ====== */
+.text-field {
+    -fx-background-color: #252535;
+    -fx-text-fill: #E0E0E0;
+    -fx-border-color: transparent;
+    -fx-padding: 8px;
+}
+
+.text-field:focused {
+    -fx-focus-color: #BB86FC;
+    -fx-faint-focus-color: transparent;
+    -fx-border-color: #BB86FC;
+}
+
+/* ====== TabPane Styling ====== */
+.tab-pane {
+    -fx-background-color: #1E1E2E;
+}
+
+.tab-pane:focused,
+.tab-pane .tab:selected:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #1E1E2E;
+    -fx-border-color: transparent;
+    -fx-padding: 4px 0;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: #1E1E2E;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #252535;
+    -fx-padding: 10px 15px;
+    -fx-text-base-color: #E0E0E0;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #2A2A3A;
+    -fx-text-base-color: #E0E0E0;
+}
+
+.tab-pane .tab-label {
+    -fx-text-fill: #E0E0E0;
+    -fx-font-size: 13px;
+    -fx-padding: 4px 4px;
+}
+
+/* ====== ComboBox Styling ====== */
+.combo-box {
+    -fx-background-color: #252535;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #252535;
+    -fx-text-fill: #E0E0E0;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #2A2A3A;
+}
+
+/* ====== ListView Styling ====== */
+.list-view {
+    -fx-background-color: #1E1E2E;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #E0E0E0;
+}
+
+.list-cell:selected {
+    -fx-background-color: #BB86FC;
+}
+
+/* ====== TableView Styling ====== */
+.table-view {
+    -fx-background-color: #1E1E2E;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2A2A3A;
+    -fx-text-fill: #E0E0E0;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #E0E0E0;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #BB86FC;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ====== Scrollbar Styling ====== */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: #1E1E2E;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #3A3A4A;
+    -fx-background-insets: 2;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #505060;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #1E1E2E;
+    -fx-background-insets: 0;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 4;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-background-color: transparent;
+}
+
+/* ====== Special Text Styling ====== */
+.note-title {
+    -fx-text-fill: #CBA6F7;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.main-header {
+    -fx-text-fill: #F5C2E7;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.list-item {
+    -fx-text-fill: #94E2D5;
+    -fx-font-style: italic;
+    -fx-font-size: 14px;
+}
+
+.search-highlight {
+    -fx-text-fill: #FFB86C;
+    -fx-font-weight: bold;
+    -fx-background-color: #44475A;
+}
+
+/* ====== Link Styling ====== */
+.link {
+    -fx-text-fill: #4A9EFF;
+    -fx-underline: true;
+    -fx-font-weight: normal;
+}
+
+.link-blue {
+    -fx-text-fill: #4A9EFF;
+    -fx-underline: true;
+}
+
+.link-cyan {
+    -fx-text-fill: #00BFFF;
+    -fx-underline: true;
+}
+
+.link-purple {
+    -fx-text-fill: #DA70D6;
+    -fx-underline: true;
+}
+
+.link-green {
+    -fx-text-fill: #32CD32;
+    -fx-underline: true;
+}
+
+.link-orange {
+    -fx-text-fill: #FF8C00;
+    -fx-underline: true;
+}
