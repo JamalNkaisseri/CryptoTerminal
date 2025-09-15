@@ -19,7 +19,11 @@ public class SideBar extends VBox {
     private final double collapsedWidth = 80;
     private final Duration animationDuration = Duration.millis(250);
 
-    public SideBar() {
+    private final MainWindow mainWindow; // reference to main window
+
+    public SideBar(MainWindow mainWindow) {
+        this.mainWindow = mainWindow;
+
         setPadding(new Insets(20));
         setSpacing(15);
         setAlignment(Pos.TOP_LEFT);
@@ -28,13 +32,17 @@ public class SideBar extends VBox {
 
         // Toggle button (☰) to collapse/expand
         Button toggleBtn = new Button("☰");
-        toggleBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: " + ThemeManager.TEXT_COLOR + "; -fx-font-size:16px;");
+        toggleBtn.setStyle("-fx-background-color: transparent; -fx-text-fill: "
+                + ThemeManager.TEXT_COLOR + "; -fx-font-size:16px;");
         toggleBtn.setOnAction(e -> toggle());
 
         // Sidebar buttons
         Button homeBtn = createSidebarButton("fas-home", "Home");
         Button marketsBtn = createSidebarButton("fas-chart-line", "Markets");
+
         Button walletBtn = createSidebarButton("fas-wallet", "Wallet");
+        walletBtn.setOnAction(e -> mainWindow.showWalletManager()); // ✅ now wired
+
         Button settingsBtn = createSidebarButton("fas-cog", "Settings");
 
         getChildren().addAll(toggleBtn, homeBtn, marketsBtn, walletBtn, settingsBtn);
@@ -47,7 +55,8 @@ public class SideBar extends VBox {
 
         Button btn = new Button(text, icon);
         btn.setContentDisplay(ContentDisplay.LEFT);
-        btn.setStyle("-fx-background-color: transparent; -fx-text-fill: " + ThemeManager.TEXT_COLOR + "; -fx-font-size: 14px;");
+        btn.setStyle("-fx-background-color: transparent; -fx-text-fill: "
+                + ThemeManager.TEXT_COLOR + "; -fx-font-size: 14px;");
         btn.setPrefWidth(Double.MAX_VALUE);
 
         Tooltip tooltip = new Tooltip(text);
@@ -57,8 +66,10 @@ public class SideBar extends VBox {
         btn.getProperties().put("tooltip-ref", tooltip);
 
         // Hover effect
-        btn.setOnMouseEntered(e -> btn.setStyle("-fx-background-color: " + ThemeManager.SELECTION_COLOR + "; -fx-text-fill: white; -fx-font-size: 14px;"));
-        btn.setOnMouseExited(e -> btn.setStyle("-fx-background-color: transparent; -fx-text-fill: " + ThemeManager.TEXT_COLOR + "; -fx-font-size: 14px;"));
+        btn.setOnMouseEntered(e -> btn.setStyle("-fx-background-color: "
+                + ThemeManager.SELECTION_COLOR + "; -fx-text-fill: white; -fx-font-size: 14px;"));
+        btn.setOnMouseExited(e -> btn.setStyle("-fx-background-color: transparent; -fx-text-fill: "
+                + ThemeManager.TEXT_COLOR + "; -fx-font-size: 14px;"));
 
         return btn;
     }
